@@ -1,0 +1,9 @@
+{% if translations %}
+    <ul>
+    {% for t in translations %}
+        <li>{{ t.translation }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No translations are available.</p>
+{% endif %}
