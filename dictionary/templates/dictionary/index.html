@@ -1,9 +1,22 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>welcome to linguipedia</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
 {% if translations %}
+<h2>{{ word }}</h2>
     <ul>
     {% for t in translations %}
-        <li>{{ t.translation }}</li>
+        <li>{{ t.language }} : {{ t.translation }}</li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No translations are available.</p>
 {% endif %}
+</body>
+</html>

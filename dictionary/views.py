@@ -6,7 +6,9 @@ from .models import TranslatedWord
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the dictionary index.")
+    context = {
+    }
+    return render(request, 'dictionary/index.html', context)
 
 
 def translate(request, word):
@@ -16,5 +18,6 @@ def translate(request, word):
         translations.remove(found_word)
     context = {
         'translations': translations,
+        'word': found_word,
     }
     return render(request, 'dictionary/index.html', context)
